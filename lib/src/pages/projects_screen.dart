@@ -10,7 +10,7 @@ class ProjectsScreen extends StatelessWidget {
         title: const Text('Meine Projekte'),
       ),
       body: const Center(
-        child: Text('Hier kannst du eine Liste deiner Projekte anzeigen.'),
+        child: Text('Projekte folgen noch'),
       ),
     );
   }

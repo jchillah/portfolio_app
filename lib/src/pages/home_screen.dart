@@ -4,20 +4,41 @@ import 'package:portfolio_app/src/pages/contact_screen.dart';
 import 'package:portfolio_app/src/pages/projects_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final bool isDarkMode;
+  final Function toggleTheme;
+
+  const HomeScreen({
+    super.key,
+    required this.isDarkMode,
+    required this.toggleTheme,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Willkommen zu meinem Portfolio'),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 16.0),
+          child: Text('Mein Portfolio!'),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: Switch(
+              value: isDarkMode,
+              onChanged: (value) {
+                toggleTheme();
+              },
+            ),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Hallo, ich bin Max Mustermann',
+              'Hallo, ich bin Michael Winkler',
               style: TextStyle(fontSize: 24),
             ),
             const SizedBox(height: 20),
